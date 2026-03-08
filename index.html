@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,24 +14,58 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-font-family: 'Segoe UI', sans-serif;
+font-family:'Segoe UI',sans-serif;
 background:#0d1117;
 color:#e6edf3;
 line-height:1.7;
 }
 
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#161b22;
+padding:15px 0;
+z-index:1000;
+border-bottom:1px solid #30363d;
+}
+
+.nav-container{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 20px;
+}
+
+nav a{
+color:#e6edf3;
+text-decoration:none;
+margin-left:20px;
+font-size:14px;
+}
+
+nav a:hover{
+color:#58a6ff;
+}
+
+/* MAIN */
+
 .container{
 max-width:1000px;
 margin:auto;
-padding:40px 20px;
+padding:120px 20px 40px 20px;
 }
 
 .hero{
 text-align:center;
-margin-bottom:50px;
 }
 
 .hero img{
@@ -45,20 +80,17 @@ margin-bottom:10px;
 }
 
 h2{
-margin-top:50px;
+margin-top:60px;
 margin-bottom:20px;
 color:#58a6ff;
 }
 
 .about{
-text-align:center;
 font-size:18px;
 opacity:0.9;
 }
 
-.section{
-margin-top:40px;
-}
+/* SKILLS */
 
 .skills{
 display:flex;
@@ -74,9 +106,28 @@ border:1px solid #30363d;
 font-size:14px;
 }
 
-.tools img{
-margin-top:10px;
+/* PROJECT */
+
+.project-card{
+background:#161b22;
+border:1px solid #30363d;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+transition:0.3s;
 }
+
+.project-card:hover{
+transform:translateY(-5px);
+border-color:#58a6ff;
+}
+
+.project-card a{
+color:#58a6ff;
+text-decoration:none;
+}
+
+/* STATS */
 
 .stats{
 display:grid;
@@ -88,12 +139,13 @@ gap:20px;
 width:100%;
 }
 
+/* CONTACT */
+
 .contact{
 background:#161b22;
 padding:25px;
 border-radius:10px;
 border:1px solid #30363d;
-margin-top:20px;
 }
 
 .contact a{
@@ -101,16 +153,20 @@ color:#58a6ff;
 text-decoration:none;
 }
 
-.contact a:hover{
-text-decoration:underline;
+/* FADE ANIMATION */
+
+.fade{
+opacity:0;
+transform:translateY(20px);
+transition:1s;
 }
 
-footer{
-text-align:center;
-margin-top:60px;
-opacity:0.7;
-font-size:14px;
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
+
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -125,48 +181,66 @@ font-size:28px;
 }
 
 </style>
+
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="nav-container">
+
+<div><b>Trung Viet</b></div>
+
+<div>
+
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+</nav>
+
 <div class="container">
 
-<div class="hero">
+<!-- HERO -->
+
+<div class="hero fade">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=200&section=header&text=Tran%20Trung%20Viet%20-%20Software%20Tester&fontSize=38&fontColor=ffffff&animation=fadeIn">
 
 <h1>👋 Hi, I'm Trần Trung Việt</h1>
 
 <p class="about">
-🎓 Information Technology Student at <b>Saigon University</b><br>
+🎓 IT Student at <b>Saigon University</b><br>
 🔎 Aspiring <b>Software Tester / QA Engineer</b>
 </p>
 
-<p class="about" style="margin-top:10px;">
-I’m interested in <b>software quality, testing processes, and ensuring applications work reliably for users.</b>
-</p>
-
 </div>
 
+<!-- ABOUT -->
 
-<h2>🚀 About Me</h2>
+<h2 id="about" class="fade">🚀 About Me</h2>
 
-<div class="section">
-
-<ul>
-<li>🎓 Software Engineering Student at <b>Saigon University</b></li>
+<ul class="fade">
+<li>🎓 IT Student at <b>Saigon University</b></li>
 <li>🧪 Interested in <b>Software Testing / QA Engineering</b></li>
-<li>🔍 Focused on <b>manual testing, API testing, and bug analysis</b></li>
-<li>📚 Learning about <b>testing processes, test case design, and system quality assurance</b></li>
+<li>🔍 Focused on <b>manual testing, API testing, bug analysis</b></li>
+<li>📚 Learning about <b>test case design and quality assurance</b></li>
 <li>💡 Familiar with <b>web applications and backend APIs</b></li>
 </ul>
 
-</div>
+<!-- SKILLS -->
 
+<h2 id="skills" class="fade">🧪 Testing & QA Skills</h2>
 
-<h2>🧪 Testing & QA Skills</h2>
-
-<div class="skills">
+<div class="skills fade">
 
 <div class="skill">Manual Testing</div>
 <div class="skill">Test Case Design</div>
@@ -177,25 +251,35 @@ I’m interested in <b>software quality, testing processes, and ensuring applica
 
 </div>
 
+<!-- PROJECT -->
 
-<h2>🛠 Tech & Tools</h2>
+<h2 id="projects" class="fade">💻 Projects</h2>
 
-<div class="tools">
+<div class="project-card fade">
 
-<p><b>Languages / Technical Knowledge</b></p>
+<h3>NearBite – Food Finder Web App</h3>
 
-<img src="https://skillicons.dev/icons?i=js,python,mysql">
+<p>
+A Progressive Web App helping users find nearby food locations.
+</p>
 
-<p style="margin-top:20px;"><b>Tools</b></p>
+<p>
+Tech: ExpressJS, MongoDB, PWA
+</p>
 
-<img src="https://skillicons.dev/icons?i=postman,git,github">
+<p>
+<a href="https://github.com/TrungViet234" target="_blank">
+View on GitHub
+</a>
+</p>
 
 </div>
 
+<!-- STATS -->
 
-<h2>📊 GitHub Stats</h2>
+<h2 class="fade">📊 GitHub Stats</h2>
 
-<div class="stats">
+<div class="stats fade">
 
 <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=TrungViet234&show_icons=true&theme=tokyonight">
 
@@ -203,27 +287,23 @@ I’m interested in <b>software quality, testing processes, and ensuring applica
 
 </div>
 
+<!-- CONTACT -->
 
-<h2>📈 Top Languages</h2>
+<h2 id="contact" class="fade">📫 Contact</h2>
 
-<img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=TrungViet234&layout=compact&theme=tokyonight">
+<div class="contact fade">
 
+<p>Email: <b>tr.trungviet04@gmail.com</b></p>
 
-<h2>📫 Contact</h2>
-
-<div class="contact">
-
-<p>📧 Email: <b>tr.trungviet04@gmail.com</b></p>
-
-<p style="margin-top:10px;">
-💼 LinkedIn<br>
+<p>
+LinkedIn<br>
 <a href="https://www.linkedin.com/in/trung-viet-tran-44316236a/" target="_blank">
 linkedin.com/in/trung-viet-tran
 </a>
 </p>
 
-<p style="margin-top:10px;">
-💻 GitHub<br>
+<p>
+GitHub<br>
 <a href="https://github.com/TrungViet234" target="_blank">
 github.com/TrungViet234
 </a>
@@ -231,14 +311,39 @@ github.com/TrungViet234
 
 </div>
 
-
-<footer>
-
-⭐ Open to opportunities in <b>Software Testing / QA Engineering</b>
-
-</footer>
-
 </div>
 
+<script>
+
+/* SCROLL ANIMATION */
+
+const faders = document.querySelectorAll(".fade");
+
+const appearOptions = {
+threshold:0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries,observer){
+
+entries.forEach(entry => {
+
+if(!entry.isIntersecting){
+return;
+}
+
+entry.target.classList.add("show");
+observer.unobserve(entry.target);
+
+});
+
+},appearOptions);
+
+faders.forEach(fader => {
+appearOnScroll.observe(fader);
+});
+
+</script>
+
 </body>
+
 </html>
