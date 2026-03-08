@@ -1,432 +1,868 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Tran Trung Viet | Software Tester</title>
-
+<title>Tran Trung Viet | QA Portfolio</title>
+<meta name="description" content="Portfolio of Tran Trung Viet, a Software Engineering student at Saigon University focused on software testing, QA engineering, API testing, and bug analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
---bg:#050816;
---bg-soft:#0c1224;
---card:rgba(16,23,44,0.72);
---stroke:rgba(143,174,255,0.24);
---text:#ecf2ff;
---muted:#b4c2e0;
---primary:#6ea8ff;
---primary-2:#9d7cff;
---glow:0 12px 40px rgba(74,120,255,0.24);
+:root {
+  --bg: #07111f;
+  --bg-elevated: rgba(10, 25, 44, 0.78);
+  --surface: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #f4f7fb;
+  --muted: #a6b3c5;
+  --accent: #7ee0c3;
+  --accent-strong: #4ec3aa;
+  --accent-soft: rgba(126, 224, 195, 0.16);
+  --highlight: #ffd280;
+  --shadow-lg: 0 28px 80px rgba(0, 0, 0, 0.36);
+  --shadow-md: 0 18px 45px rgba(0, 0, 0, 0.28);
+  --radius-xl: 32px;
+  --radius-md: 16px;
+  --container: 1160px;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+* {
+  box-sizing: border-box;
 }
 
-body{
-font-family:'Segoe UI',sans-serif;
-background:
-radial-gradient(circle at 10% 12%, rgba(109,140,255,0.24), transparent 32%),
-radial-gradient(circle at 92% 8%, rgba(157,124,255,0.2), transparent 28%),
-linear-gradient(160deg, #070b1c 0%, #050816 45%, #050713 100%);
-color:var(--text);
-line-height:1.75;
+html {
+  scroll-behavior: smooth;
 }
 
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(5,8,22,0.78);
-backdrop-filter:blur(14px);
-padding:14px 0;
-z-index:1000;
-border-bottom:1px solid rgba(143,174,255,0.22);
-box-shadow:0 4px 24px rgba(0,0,0,0.25);
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(126, 224, 195, 0.16), transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(255, 210, 128, 0.14), transparent 22%),
+    radial-gradient(circle at 50% 100%, rgba(38, 110, 255, 0.12), transparent 30%),
+    linear-gradient(180deg, #07111f 0%, #091a2b 48%, #06101c 100%);
+  min-height: 100vh;
 }
 
-.nav-container{
-max-width:1120px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 20px;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.58), transparent 92%);
+  pointer-events: none;
 }
 
-.nav-container > div:first-child{
-letter-spacing:0.6px;
-font-size:17px;
+a {
+  color: inherit;
 }
 
-nav a{
-color:var(--muted);
-text-decoration:none;
-margin-left:10px;
-font-size:14px;
-font-weight:600;
-padding:8px 12px;
-border-radius:999px;
-transition:all .25s ease;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-nav a:hover{
-background:rgba(110,168,255,0.15);
-color:var(--text);
+.page-shell {
+  width: min(calc(100% - 40px), var(--container));
+  margin: 0 auto;
 }
 
-.container{
-max-width:1120px;
-margin:auto;
-padding:116px 20px 56px;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: rgba(7, 17, 31, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.hero{
-text-align:center;
-background:linear-gradient(160deg, rgba(110,168,255,0.12), rgba(157,124,255,0.11));
-border:1px solid var(--stroke);
-border-radius:22px;
-padding:24px 20px 28px;
-box-shadow:var(--glow);
+.site-header__inner {
+  width: min(calc(100% - 40px), var(--container));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  position: relative;
 }
 
-.hero img{
-width:100%;
-border-radius:14px;
-margin-bottom:20px;
-border:1px solid rgba(255,255,255,0.2);
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-h1{
-font-size:40px;
-line-height:1.25;
-margin-bottom:12px;
+.brand__mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(126, 224, 195, 0.22), rgba(255, 210, 128, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
-h2{
-margin-top:64px;
-margin-bottom:18px;
-font-size:28px;
-letter-spacing:0.3px;
-color:#c6d7ff;
+.brand__name {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
 }
 
-.about{
-font-size:19px;
-opacity:0.95;
-color:var(--muted);
+.brand__role {
+  color: var(--muted);
+  font-size: 0.84rem;
 }
 
-ul{
-list-style:none;
-display:grid;
-gap:12px;
+.nav-toggle {
+  display: none;
+  border: 0;
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 10px 12px;
+  cursor: pointer;
 }
 
-ul li{
-background:var(--card);
-padding:14px 16px;
-border-radius:12px;
-border:1px solid var(--stroke);
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:12px;
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.94rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 999px;
+  transition: background 0.24s ease, color 0.24s ease, transform 0.24s ease;
 }
 
-.skill{
-background:var(--card);
-padding:12px 14px;
-border-radius:12px;
-border:1px solid var(--stroke);
-font-size:14px;
-font-weight:600;
-color:#dce7ff;
-transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  transform: translateY(-1px);
 }
 
-.skill:hover{
-transform:translateY(-4px);
-border-color:rgba(157,124,255,0.6);
-box-shadow:0 10px 22px rgba(117,135,255,0.22);
+main {
+  padding: 42px 0 88px;
 }
 
-.project-card{
-background:var(--card);
-border:1px solid var(--stroke);
-padding:24px;
-border-radius:16px;
-margin-top:14px;
-transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 28px;
+  padding: 42px;
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    rgba(7, 17, 31, 0.72);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
 }
 
-.project-card:hover{
-transform:translateY(-6px);
-border-color:rgba(110,168,255,0.65);
-box-shadow:var(--glow);
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -60px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(126, 224, 195, 0.2), transparent 65%);
 }
 
-.project-card h3{
-font-size:22px;
-margin-bottom:8px;
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(126, 224, 195, 0.2);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-.project-card a,
-.contact a{
-color:var(--primary);
-text-decoration:none;
-font-weight:700;
+.hero h1 {
+  margin: 18px 0 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(2.8rem, 4vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 
-.project-card a:hover,
-.contact a:hover{
-color:var(--text);
-text-decoration:underline;
+.hero h1 span {
+  color: var(--highlight);
 }
 
-.stats{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
+.hero p {
+  margin: 0;
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.8;
 }
 
-.stats img{
-width:100%;
-border-radius:14px;
-border:1px solid var(--stroke);
-box-shadow:0 10px 26px rgba(0,0,0,0.35);
-transition:transform .28s ease;
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
 }
 
-.stats img:hover{
-transform:translateY(-4px);
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
 }
 
-.contact{
-background:var(--card);
-padding:24px;
-border-radius:16px;
-border:1px solid var(--stroke);
-display:grid;
-gap:14px;
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
 }
 
-.fade{
-opacity:0;
-transform:translateY(18px);
-transition:0.85s cubic-bezier(.2,.65,.2,1);
+.button--primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #07231f;
+  box-shadow: 0 16px 35px rgba(78, 195, 170, 0.28);
 }
 
-.fade.show{
-opacity:1;
-transform:translateY(0);
+.button--ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@media(max-width:800px){
-.stats{
-grid-template-columns:1fr;
+.hero-meta {
+  display: grid;
+  gap: 16px;
 }
 
-h1{
-font-size:30px;
+.panel {
+  border-radius: 26px;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
-h2{
-font-size:24px;
+.panel--profile {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.about{
-font-size:17px;
+.profile-badge {
+  width: 90px;
+  height: 90px;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, rgba(126, 224, 195, 0.24), rgba(255, 210, 128, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
 }
 
-.nav-container{
-gap:8px;
-align-items:flex-start;
-flex-direction:column;
+.profile-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.4rem;
+  margin: 0 0 10px;
 }
 
-.nav-container > div:last-child{
-display:flex;
-flex-wrap:wrap;
+.profile-copy {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
 }
 
-nav a{
-margin-left:0;
-margin-right:8px;
-}
+.profile-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
 }
 
+.fact {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fact strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--highlight);
+}
+
+.fact span {
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.section {
+  margin-top: 28px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+}
+
+.section-heading {
+  margin: 0 0 18px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.55rem;
+  letter-spacing: -0.03em;
+}
+
+.section-intro {
+  margin: 0 0 28px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.feature-list,
+.skill-grid,
+.contact-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.feature-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.feature-card,
+.skill-card,
+.contact-card,
+.project-card,
+.stat-card {
+  border-radius: var(--radius-md);
+  padding: 22px;
+  background: var(--bg-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-card h3,
+.project-card h3,
+.contact-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.08rem;
+}
+
+.feature-card p,
+.project-card p,
+.contact-card p,
+.skill-card p,
+.stat-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.feature-card span,
+.project-card span,
+.contact-card span,
+.stat-card span {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.skill-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.skill-card {
+  min-height: 132px;
+}
+
+.skill-card strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -50px -80px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 210, 128, 0.16), transparent 70%);
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 22px;
+  padding: 0;
+}
+
+.project-stack li {
+  list-style: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.project-link {
+  text-decoration: none;
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+.stat-layout {
+  display: grid;
+  gap: 14px;
+}
+
+.stats-preview {
+  display: grid;
+  gap: 14px;
+}
+
+.stats-preview img {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-card a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.contact-card a:hover,
+.contact-card a:focus-visible,
+.project-link:hover,
+.project-link:focus-visible {
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .section-grid,
+  .feature-list,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-grid,
+  .profile-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header__inner {
+    align-items: flex-start;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    border-radius: 18px;
+    background: rgba(7, 17, 31, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    text-align: center;
+  }
+
+  main {
+    padding-top: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.35rem, 10vw, 3.4rem);
+  }
+
+  .skill-grid,
+  .profile-facts,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-shell,
+  .site-header__inner {
+    width: min(calc(100% - 28px), var(--container));
+  }
+
+  .hero,
+  .panel,
+  .feature-card,
+  .skill-card,
+  .contact-card,
+  .project-card,
+  .stat-card {
+    padding: 20px;
+  }
+}
 </style>
-
 </head>
-
 <body>
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="brand">
+      <div class="brand__mark">TV</div>
+      <div>
+        <div class="brand__name">Tran Trung Viet</div>
+        <div class="brand__role">Software Tester / QA Engineer</div>
+      </div>
+    </div>
 
-<!-- NAVBAR -->
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      Menu
+    </button>
 
-<nav>
+    <nav class="nav-links" id="site-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#project">Project</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-<div class="nav-container">
+<main class="page-shell">
+  <section class="hero reveal" aria-labelledby="hero-title">
+    <div>
+      <div class="eyebrow">Quality Focused Portfolio</div>
+      <h1 id="hero-title">Trần Trung Việt, building a path in <span>software testing</span> and product quality.</h1>
+      <p>
+        I am a Software Engineering student at <strong>Saigon University</strong> with a growing focus on <strong>Software Testing and QA Engineering</strong>. I am currently strengthening my foundation in manual testing, API testing, bug analysis, and test case design for web applications and backend APIs.
+      </p>
 
-<div><b>Trung Viet</b></div>
+      <div class="hero-actions">
+        <a class="button button--primary" href="https://github.com/TrungViet234" target="_blank" rel="noreferrer">View GitHub</a>
+        <a class="button button--ghost" href="https://www.linkedin.com/in/trung-viet-tran-44316236a/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+      </div>
+    </div>
 
-<div>
+    <aside class="hero-meta">
+      <div class="panel panel--profile">
+        <div>
+          <div class="profile-badge">QA</div>
+          <h2 class="profile-title">Focused on dependable testing workflows</h2>
+          <p class="profile-copy">
+            My current direction is centered on understanding how quality is planned, verified, and improved across the software lifecycle.
+          </p>
+        </div>
 
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+        <div class="profile-facts">
+          <div class="fact">
+            <strong>University</strong>
+            <span>Saigon University</span>
+          </div>
+          <div class="fact">
+            <strong>Track</strong>
+            <span>Software Testing / QA</span>
+          </div>
+          <div class="fact">
+            <strong>Focus</strong>
+            <span>Manual testing and API testing</span>
+          </div>
+          <div class="fact">
+            <strong>Strength</strong>
+            <span>Bug analysis and test case design</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </section>
 
-</div>
+  <section class="section section-grid" id="about">
+    <div class="reveal">
+      <div class="panel">
+        <h2 class="section-heading">About me</h2>
+        <p class="section-intro">
+          I am building my career around software quality with an interest in making products more stable, testable, and reliable. My current learning path covers practical QA fundamentals, with attention to web application behavior, backend APIs, and structured defect reporting.
+        </p>
 
-</div>
+        <div class="feature-list">
+          <article class="feature-card">
+            <span>Current focus</span>
+            <h3>Testing mindset</h3>
+            <p>Developing a disciplined approach to identifying product issues, validating expected behavior, and documenting defects clearly.</p>
+          </article>
 
-</nav>
+          <article class="feature-card">
+            <span>Learning path</span>
+            <h3>QA foundations</h3>
+            <p>Studying software testing concepts such as STLC, test case design, manual validation, and quality assurance workflows.</p>
+          </article>
 
-<div class="container">
+          <article class="feature-card">
+            <span>Product scope</span>
+            <h3>Web and API systems</h3>
+            <p>Working with application flows that involve interfaces, user behavior, backend services, and endpoint verification.</p>
+          </article>
 
-<!-- HERO -->
+          <article class="feature-card">
+            <span>Working style</span>
+            <h3>Structured analysis</h3>
+            <p>Interested in bug analysis, clear reporting, and careful observation of how small issues affect user experience and system quality.</p>
+          </article>
+        </div>
+      </div>
+    </div>
 
-<div class="hero fade">
+    <div class="reveal">
+      <div class="stat-layout">
+        <article class="stat-card">
+          <span>Profile summary</span>
+          <p>Software Engineering student with a defined QA direction, combining technical learning with practical interest in testing workflows and software reliability.</p>
+        </article>
+        <article class="stat-card">
+          <span>Quality interests</span>
+          <p>Manual testing, API verification, defect tracking, and learning how to design meaningful test coverage.</p>
+        </article>
+        <article class="stat-card">
+          <span>Goal</span>
+          <p>Continue growing into a strong Software Tester / QA Engineer through disciplined execution, documentation, and product understanding.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=200&section=header&text=Tran%20Trung%20Viet%20-%20Software%20Tester&fontSize=38&fontColor=ffffff&animation=fadeIn">
+  <section class="section" id="skills">
+    <div class="panel reveal">
+      <h2 class="section-heading">Testing and QA skills</h2>
+      <p class="section-intro">
+        The current skill set reflects my core QA direction and the areas I am actively building through study and hands-on work.
+      </p>
 
-<h1>👋 Hi, I'm Trần Trung Việt</h1>
+      <div class="skill-grid">
+        <article class="skill-card">
+          <strong>Manual Testing</strong>
+          <p>Validating features through scenario-based checks and expected behavior review.</p>
+        </article>
+        <article class="skill-card">
+          <strong>Test Case Design</strong>
+          <p>Learning to structure practical test cases that cover important flows and edge situations.</p>
+        </article>
+        <article class="skill-card">
+          <strong>Bug Reporting</strong>
+          <p>Documenting defects clearly so issues can be reproduced, analyzed, and prioritized effectively.</p>
+        </article>
+        <article class="skill-card">
+          <strong>Functional Testing</strong>
+          <p>Checking whether product functionality behaves correctly against expected requirements.</p>
+        </article>
+        <article class="skill-card">
+          <strong>API Testing</strong>
+          <p>Testing backend endpoints and response behavior as part of broader application quality validation.</p>
+        </article>
+        <article class="skill-card">
+          <strong>STLC</strong>
+          <p>Understanding the structure of the software testing life cycle and how quality work is organized.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<p class="about">
-🎓 IT Student at <b>Saigon University</b><br>
-🔎 Aspiring <b>Software Tester / QA Engineer</b>
-</p>
+  <section class="section section-grid" id="project">
+    <div class="reveal">
+      <article class="project-card">
+        <span>Featured project</span>
+        <h3>NearBite - Food Finder Web App</h3>
+        <p>
+          A Progressive Web App designed to help users find nearby food locations. This project reflects experience working around a real web product stack and understanding how application behavior can be validated across frontend and backend flows.
+        </p>
 
-</div>
+        <ul class="project-stack" aria-label="Project technologies">
+          <li>ExpressJS</li>
+          <li>MongoDB</li>
+          <li>PWA</li>
+        </ul>
 
-<!-- ABOUT -->
+        <a class="project-link" href="https://github.com/TrungViet234" target="_blank" rel="noreferrer">Explore project work on GitHub</a>
+      </article>
+    </div>
 
-<h2 id="about" class="fade">🚀 About Me</h2>
+    <div class="reveal">
+      <div class="panel">
+        <h2 class="section-heading">GitHub presence</h2>
+        <p class="section-intro">
+          A quick snapshot of public activity and contribution consistency from GitHub.
+        </p>
 
-<ul class="fade">
-<li>🎓 IT Student at <b>Saigon University</b></li>
-<li>🧪 Interested in <b>Software Testing / QA Engineering</b></li>
-<li>🔍 Focused on <b>manual testing, API testing, bug analysis</b></li>
-<li>📚 Learning about <b>test case design and quality assurance</b></li>
-<li>💡 Familiar with <b>web applications and backend APIs</b></li>
-</ul>
+        <div class="stats-preview">
+          <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=TrungViet234&show_icons=true&theme=tokyonight" alt="GitHub stats for TrungViet234">
+          <img src="https://streak-stats.demolab.com/?user=TrungViet234&theme=tokyonight" alt="GitHub streak stats for TrungViet234">
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- SKILLS -->
+  <section class="section" id="contact">
+    <div class="panel reveal">
+      <h2 class="section-heading">Contact</h2>
+      <p class="section-intro">
+        If you want to connect regarding QA, testing practice, or collaboration opportunities, these are the best channels to reach me.
+      </p>
 
-<h2 id="skills" class="fade">🧪 Testing & QA Skills</h2>
+      <div class="contact-grid">
+        <article class="contact-card">
+          <span>Email</span>
+          <h3>Direct contact</h3>
+          <p><a href="mailto:tr.trungviet04@gmail.com">tr.trungviet04@gmail.com</a></p>
+        </article>
 
-<div class="skills fade">
+        <article class="contact-card">
+          <span>LinkedIn</span>
+          <h3>Professional profile</h3>
+          <p><a href="https://www.linkedin.com/in/trung-viet-tran-44316236a/" target="_blank" rel="noreferrer">linkedin.com/in/trung-viet-tran-44316236a</a></p>
+        </article>
 
-<div class="skill">Manual Testing</div>
-<div class="skill">Test Case Design</div>
-<div class="skill">Bug Reporting</div>
-<div class="skill">Functional Testing</div>
-<div class="skill">API Testing</div>
-<div class="skill">STLC</div>
+        <article class="contact-card">
+          <span>GitHub</span>
+          <h3>Public work</h3>
+          <p><a href="https://github.com/TrungViet234" target="_blank" rel="noreferrer">github.com/TrungViet234</a></p>
+        </article>
+      </div>
 
-</div>
-
-<!-- PROJECT -->
-
-<h2 id="projects" class="fade">💻 Projects</h2>
-
-<div class="project-card fade">
-
-<h3>NearBite – Food Finder Web App</h3>
-
-<p>
-A Progressive Web App helping users find nearby food locations.
-</p>
-
-<p>
-Tech: ExpressJS, MongoDB, PWA
-</p>
-
-<p>
-<a href="https://github.com/TrungViet234" target="_blank">
-View on GitHub
-</a>
-</p>
-
-</div>
-
-<!-- STATS -->
-
-<h2 class="fade">📊 GitHub Stats</h2>
-
-<div class="stats fade">
-
-<img src="https://github-readme-stats-sigma-five.vercel.app/api?username=TrungViet234&show_icons=true&theme=tokyonight">
-
-<img src="https://streak-stats.demolab.com/?user=TrungViet234&theme=tokyonight">
-
-</div>
-
-<!-- CONTACT -->
-
-<h2 id="contact" class="fade">📫 Contact</h2>
-
-<div class="contact fade">
-
-<p>Email: <b>tr.trungviet04@gmail.com</b></p>
-
-<p>
-LinkedIn<br>
-<a href="https://www.linkedin.com/in/trung-viet-tran-44316236a/" target="_blank">
-linkedin.com/in/trung-viet-tran
-</a>
-</p>
-
-<p>
-GitHub<br>
-<a href="https://github.com/TrungViet234" target="_blank">
-github.com/TrungViet234
-</a>
-</p>
-
-</div>
-
-</div>
+      <div class="footer">
+        Tran Trung Viet - Software Tester / QA Engineer Portfolio
+      </div>
+    </div>
+  </section>
+</main>
 
 <script>
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const navAnchors = document.querySelectorAll('.nav-links a');
 
-/* SCROLL ANIMATION */
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
 
-const faders = document.querySelectorAll(".fade");
-
-const appearOptions = {
-threshold:0.2
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries,observer){
-
-entries.forEach(entry => {
-
-if(!entry.isIntersecting){
-return;
+  navAnchors.forEach((anchor) => {
+    anchor.addEventListener('click', () => {
+      navLinks.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 }
 
-entry.target.classList.add("show");
-observer.unobserve(entry.target);
+const revealItems = document.querySelectorAll('.reveal');
 
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    }
+
+    entry.target.classList.add('is-visible');
+    observer.unobserve(entry.target);
+  });
+}, {
+  threshold: 0.18
 });
 
-},appearOptions);
-
-faders.forEach(fader => {
-appearOnScroll.observe(fader);
+revealItems.forEach((item) => {
+  revealObserver.observe(item);
 });
-
 </script>
-
 </body>
-
 </html>
