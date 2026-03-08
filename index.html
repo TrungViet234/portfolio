@@ -9,41 +9,91 @@
 
 <style>
 
-body{
-font-family: Arial, Helvetica, sans-serif;
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family: 'Segoe UI', sans-serif;
 background:#0d1117;
 color:#e6edf3;
-line-height:1.6;
+line-height:1.7;
 }
 
 .container{
-max-width:900px;
+max-width:1000px;
 margin:auto;
-padding:20px;
+padding:40px 20px;
 }
 
-.header img{
+.hero{
+text-align:center;
+margin-bottom:50px;
+}
+
+.hero img{
 width:100%;
-border-radius:10px;
+border-radius:12px;
+margin-bottom:20px;
 }
 
-h1,h2{
+h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+h2{
+margin-top:50px;
+margin-bottom:20px;
 color:#58a6ff;
-margin-top:40px;
+}
+
+.about{
+text-align:center;
+font-size:18px;
+opacity:0.9;
 }
 
 .section{
-margin-bottom:40px;
+margin-top:40px;
 }
 
-.skills span{
-display:inline-block;
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.skill{
 background:#161b22;
-padding:8px 12px;
-margin:5px;
+padding:10px 14px;
 border-radius:8px;
 border:1px solid #30363d;
+font-size:14px;
+}
+
+.tools img{
+margin-top:10px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.stats img{
+width:100%;
+}
+
+.contact{
+background:#161b22;
+padding:25px;
+border-radius:10px;
+border:1px solid #30363d;
+margin-top:20px;
 }
 
 .contact a{
@@ -55,18 +105,23 @@ text-decoration:none;
 text-decoration:underline;
 }
 
-.center{
-text-align:center;
-}
-
-img{
-max-width:100%;
-}
-
 footer{
-margin-top:50px;
 text-align:center;
-opacity:0.6;
+margin-top:60px;
+opacity:0.7;
+font-size:14px;
+}
+
+@media(max-width:800px){
+
+.stats{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:28px;
+}
+
 }
 
 </style>
@@ -76,103 +131,99 @@ opacity:0.6;
 
 <div class="container">
 
-<div class="header">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=200&section=header&text=Tran%20Trung%20Viet%20-%20Software%20Tester&fontSize=38&fontColor=ffffff&animation=fadeIn">
-</div>
+<div class="hero">
 
-<div class="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=200&section=header&text=Tran%20Trung%20Viet%20-%20Software%20Tester&fontSize=38&fontColor=ffffff&animation=fadeIn">
+
 <h1>👋 Hi, I'm Trần Trung Việt</h1>
 
-<p>
+<p class="about">
 🎓 Information Technology Student at <b>Saigon University</b><br>
 🔎 Aspiring <b>Software Tester / QA Engineer</b>
 </p>
 
-<p>
+<p class="about" style="margin-top:10px;">
 I’m interested in <b>software quality, testing processes, and ensuring applications work reliably for users.</b>
 </p>
+
 </div>
 
-<div class="section">
 
 <h2>🚀 About Me</h2>
 
+<div class="section">
+
 <ul>
-<li>🎓 Software Engineer Student at <b>Saigon University</b></li>
+<li>🎓 Software Engineering Student at <b>Saigon University</b></li>
 <li>🧪 Interested in <b>Software Testing / QA Engineering</b></li>
 <li>🔍 Focused on <b>manual testing, API testing, and bug analysis</b></li>
-<li>📚 Learning more about <b>testing processes, test case design, and system quality assurance</b></li>
+<li>📚 Learning about <b>testing processes, test case design, and system quality assurance</b></li>
 <li>💡 Familiar with <b>web applications and backend APIs</b></li>
 </ul>
 
 </div>
 
-<div class="section">
 
 <h2>🧪 Testing & QA Skills</h2>
 
 <div class="skills">
-<span>Manual Testing</span>
-<span>Test Case Design</span>
-<span>Bug Reporting</span>
-<span>Functional Testing</span>
-<span>API Testing</span>
-<span>STLC</span>
-</div>
+
+<div class="skill">Manual Testing</div>
+<div class="skill">Test Case Design</div>
+<div class="skill">Bug Reporting</div>
+<div class="skill">Functional Testing</div>
+<div class="skill">API Testing</div>
+<div class="skill">STLC</div>
 
 </div>
 
-<div class="section">
 
 <h2>🛠 Tech & Tools</h2>
+
+<div class="tools">
 
 <p><b>Languages / Technical Knowledge</b></p>
 
 <img src="https://skillicons.dev/icons?i=js,python,mysql">
 
-<p style="margin-top:20px"><b>Tools</b></p>
+<p style="margin-top:20px;"><b>Tools</b></p>
 
 <img src="https://skillicons.dev/icons?i=postman,git,github">
 
 </div>
 
-<div class="section">
 
 <h2>📊 GitHub Stats</h2>
 
+<div class="stats">
+
 <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=TrungViet234&show_icons=true&theme=tokyonight">
-
-</div>
-
-<div class="section">
-
-<h2>🔥 GitHub Streak</h2>
 
 <img src="https://streak-stats.demolab.com/?user=TrungViet234&theme=tokyonight">
 
 </div>
 
-<div class="section">
 
 <h2>📈 Top Languages</h2>
 
 <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=TrungViet234&layout=compact&theme=tokyonight">
 
-</div>
-
-<div class="section contact">
 
 <h2>📫 Contact</h2>
 
+<div class="contact">
+
 <p>📧 Email: <b>tr.trungviet04@gmail.com</b></p>
 
-<p>💼 LinkedIn<br>
+<p style="margin-top:10px;">
+💼 LinkedIn<br>
 <a href="https://www.linkedin.com/in/trung-viet-tran-44316236a/" target="_blank">
 linkedin.com/in/trung-viet-tran
 </a>
 </p>
 
-<p>💻 GitHub<br>
+<p style="margin-top:10px;">
+💻 GitHub<br>
 <a href="https://github.com/TrungViet234" target="_blank">
 github.com/TrungViet234
 </a>
@@ -180,17 +231,10 @@ github.com/TrungViet234
 
 </div>
 
-<div class="section center">
-
-<h2>🐍 Contribution Snake</h2>
-
-<img src="https://github.com/TrungViet234/TrungViet234/blob/output/github-contribution-grid-snake.svg">
-
-</div>
 
 <footer>
 
-⭐ Interested in opportunities related to <b>Software Testing / QA Engineering</b>
+⭐ Open to opportunities in <b>Software Testing / QA Engineering</b>
 
 </footer>
 
