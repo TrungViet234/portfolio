@@ -9,6 +9,17 @@
 <title>Tran Trung Viet | Software Tester</title>
 
 <style>
+:root{
+--bg:#050816;
+--bg-soft:#0c1224;
+--card:rgba(16,23,44,0.72);
+--stroke:rgba(143,174,255,0.24);
+--text:#ecf2ff;
+--muted:#b4c2e0;
+--primary:#6ea8ff;
+--primary-2:#9d7cff;
+--glow:0 12px 40px rgba(74,120,255,0.24);
+}
 
 *{
 margin:0;
@@ -19,25 +30,28 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Segoe UI',sans-serif;
-background:#0d1117;
-color:#e6edf3;
-line-height:1.7;
+background:
+radial-gradient(circle at 10% 12%, rgba(109,140,255,0.24), transparent 32%),
+radial-gradient(circle at 92% 8%, rgba(157,124,255,0.2), transparent 28%),
+linear-gradient(160deg, #070b1c 0%, #050816 45%, #050713 100%);
+color:var(--text);
+line-height:1.75;
 }
-
-/* NAVBAR */
 
 nav{
 position:fixed;
 top:0;
 width:100%;
-background:#161b22;
-padding:15px 0;
+background:rgba(5,8,22,0.78);
+backdrop-filter:blur(14px);
+padding:14px 0;
 z-index:1000;
-border-bottom:1px solid #30363d;
+border-bottom:1px solid rgba(143,174,255,0.22);
+box-shadow:0 4px 24px rgba(0,0,0,0.25);
 }
 
 .nav-container{
-max-width:1100px;
+max-width:1120px;
 margin:auto;
 display:flex;
 justify-content:space-between;
@@ -45,120 +59,169 @@ align-items:center;
 padding:0 20px;
 }
 
+.nav-container > div:first-child{
+letter-spacing:0.6px;
+font-size:17px;
+}
+
 nav a{
-color:#e6edf3;
+color:var(--muted);
 text-decoration:none;
-margin-left:20px;
+margin-left:10px;
 font-size:14px;
+font-weight:600;
+padding:8px 12px;
+border-radius:999px;
+transition:all .25s ease;
 }
 
 nav a:hover{
-color:#58a6ff;
+background:rgba(110,168,255,0.15);
+color:var(--text);
 }
 
-/* MAIN */
-
 .container{
-max-width:1000px;
+max-width:1120px;
 margin:auto;
-padding:120px 20px 40px 20px;
+padding:116px 20px 56px;
 }
 
 .hero{
 text-align:center;
+background:linear-gradient(160deg, rgba(110,168,255,0.12), rgba(157,124,255,0.11));
+border:1px solid var(--stroke);
+border-radius:22px;
+padding:24px 20px 28px;
+box-shadow:var(--glow);
 }
 
 .hero img{
 width:100%;
-border-radius:12px;
+border-radius:14px;
 margin-bottom:20px;
+border:1px solid rgba(255,255,255,0.2);
 }
 
 h1{
-font-size:36px;
-margin-bottom:10px;
+font-size:40px;
+line-height:1.25;
+margin-bottom:12px;
 }
 
 h2{
-margin-top:60px;
-margin-bottom:20px;
-color:#58a6ff;
+margin-top:64px;
+margin-bottom:18px;
+font-size:28px;
+letter-spacing:0.3px;
+color:#c6d7ff;
 }
 
 .about{
-font-size:18px;
-opacity:0.9;
+font-size:19px;
+opacity:0.95;
+color:var(--muted);
 }
 
-/* SKILLS */
+ul{
+list-style:none;
+display:grid;
+gap:12px;
+}
+
+ul li{
+background:var(--card);
+padding:14px 16px;
+border-radius:12px;
+border:1px solid var(--stroke);
+}
 
 .skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:12px;
 }
 
 .skill{
-background:#161b22;
-padding:10px 14px;
-border-radius:8px;
-border:1px solid #30363d;
+background:var(--card);
+padding:12px 14px;
+border-radius:12px;
+border:1px solid var(--stroke);
 font-size:14px;
+font-weight:600;
+color:#dce7ff;
+transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
 }
 
-/* PROJECT */
+.skill:hover{
+transform:translateY(-4px);
+border-color:rgba(157,124,255,0.6);
+box-shadow:0 10px 22px rgba(117,135,255,0.22);
+}
 
 .project-card{
-background:#161b22;
-border:1px solid #30363d;
-padding:20px;
-border-radius:10px;
-margin-top:20px;
-transition:0.3s;
+background:var(--card);
+border:1px solid var(--stroke);
+padding:24px;
+border-radius:16px;
+margin-top:14px;
+transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
 }
 
 .project-card:hover{
-transform:translateY(-5px);
-border-color:#58a6ff;
+transform:translateY(-6px);
+border-color:rgba(110,168,255,0.65);
+box-shadow:var(--glow);
 }
 
-.project-card a{
-color:#58a6ff;
+.project-card h3{
+font-size:22px;
+margin-bottom:8px;
+}
+
+.project-card a,
+.contact a{
+color:var(--primary);
 text-decoration:none;
+font-weight:700;
 }
 
-/* STATS */
+.project-card a:hover,
+.contact a:hover{
+color:var(--text);
+text-decoration:underline;
+}
 
 .stats{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:20px;
+gap:18px;
 }
 
 .stats img{
 width:100%;
+border-radius:14px;
+border:1px solid var(--stroke);
+box-shadow:0 10px 26px rgba(0,0,0,0.35);
+transition:transform .28s ease;
 }
 
-/* CONTACT */
+.stats img:hover{
+transform:translateY(-4px);
+}
 
 .contact{
-background:#161b22;
-padding:25px;
-border-radius:10px;
-border:1px solid #30363d;
+background:var(--card);
+padding:24px;
+border-radius:16px;
+border:1px solid var(--stroke);
+display:grid;
+gap:14px;
 }
-
-.contact a{
-color:#58a6ff;
-text-decoration:none;
-}
-
-/* FADE ANIMATION */
 
 .fade{
 opacity:0;
-transform:translateY(20px);
-transition:1s;
+transform:translateY(18px);
+transition:0.85s cubic-bezier(.2,.65,.2,1);
 }
 
 .fade.show{
@@ -166,18 +229,38 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* MOBILE */
-
 @media(max-width:800px){
-
 .stats{
 grid-template-columns:1fr;
 }
 
 h1{
-font-size:28px;
+font-size:30px;
 }
 
+h2{
+font-size:24px;
+}
+
+.about{
+font-size:17px;
+}
+
+.nav-container{
+gap:8px;
+align-items:flex-start;
+flex-direction:column;
+}
+
+.nav-container > div:last-child{
+display:flex;
+flex-wrap:wrap;
+}
+
+nav a{
+margin-left:0;
+margin-right:8px;
+}
 }
 
 </style>
