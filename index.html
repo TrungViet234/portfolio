@@ -468,15 +468,22 @@ main {
   gap: 14px;
 }
 
-.stats-preview {
+.resume-card {
   display: grid;
-  gap: 14px;
+  gap: 18px;
 }
 
-.stats-preview img {
+.resume-note {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.resume-frame {
   width: 100%;
-  border-radius: 20px;
+  min-height: 620px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.04);
 }
 
@@ -615,7 +622,7 @@ main {
     <nav class="nav-links" id="site-nav" aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#project">Project</a>
+      <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -624,10 +631,10 @@ main {
 <main class="page-shell">
   <section class="hero reveal" aria-labelledby="hero-title">
     <div>
-      <div class="eyebrow">Quality Focused Portfolio</div>
-      <h1 id="hero-title">Trần Trung Việt, building a path in <span>software testing</span> and product quality.</h1>
+      <div class="eyebrow">QA Portfolio</div>
+      <h1 id="hero-title">Trần Trung Việt, định hướng <span>Software Testing</span> và QA.</h1>
       <p>
-        I am a Software Engineering student at <strong>Saigon University</strong> with a growing focus on <strong>Software Testing and QA Engineering</strong>. I am currently strengthening my foundation in manual testing, API testing, bug analysis, and test case design for web applications and backend APIs.
+        Sinh viên Công nghệ phần mềm tại <strong>Saigon University</strong>, tập trung vào <strong>manual testing</strong>, <strong>API testing</strong> và viết test case cho web app.
       </p>
 
       <div class="hero-actions">
@@ -640,9 +647,9 @@ main {
       <div class="panel panel--profile">
         <div>
           <div class="profile-badge">QA</div>
-          <h2 class="profile-title">Focused on dependable testing workflows</h2>
+          <h2 class="profile-title">Mục tiêu: trở thành QA Engineer</h2>
           <p class="profile-copy">
-            My current direction is centered on understanding how quality is planned, verified, and improved across the software lifecycle.
+            Mình ưu tiên cách làm việc rõ ràng, kiểm thử có cấu trúc và báo lỗi dễ tái hiện.
           </p>
         </div>
 
@@ -657,11 +664,11 @@ main {
           </div>
           <div class="fact">
             <strong>Focus</strong>
-            <span>Manual testing and API testing</span>
+            <span>Manual testing, API testing</span>
           </div>
           <div class="fact">
             <strong>Strength</strong>
-            <span>Bug analysis and test case design</span>
+            <span>Bug reporting, test case design</span>
           </div>
         </div>
       </div>
@@ -673,32 +680,32 @@ main {
       <div class="panel">
         <h2 class="section-heading">About me</h2>
         <p class="section-intro">
-          I am building my career around software quality with an interest in making products more stable, testable, and reliable. My current learning path covers practical QA fundamentals, with attention to web application behavior, backend APIs, and structured defect reporting.
+          Mình theo đuổi hướng QA với mục tiêu kiểm thử sản phẩm ổn định hơn, dễ dùng hơn và ít lỗi hơn.
         </p>
 
         <div class="feature-list">
           <article class="feature-card">
-            <span>Current focus</span>
-            <h3>Testing mindset</h3>
-            <p>Developing a disciplined approach to identifying product issues, validating expected behavior, and documenting defects clearly.</p>
+            <span>Focus</span>
+            <h3>Manual testing</h3>
+            <p>Kiểm tra luồng chính, so sánh kết quả thực tế với mong đợi và ghi nhận lỗi rõ ràng.</p>
           </article>
 
           <article class="feature-card">
-            <span>Learning path</span>
-            <h3>QA foundations</h3>
-            <p>Studying software testing concepts such as STLC, test case design, manual validation, and quality assurance workflows.</p>
+            <span>Learning</span>
+            <h3>QA foundation</h3>
+            <p>Đang củng cố STLC, viết test case, test scenario và cách tổ chức kiểm thử cơ bản.</p>
           </article>
 
           <article class="feature-card">
-            <span>Product scope</span>
-            <h3>Web and API systems</h3>
-            <p>Working with application flows that involve interfaces, user behavior, backend services, and endpoint verification.</p>
+            <span>Scope</span>
+            <h3>Web and API</h3>
+            <p>Tập trung vào hành vi giao diện, luồng người dùng và kiểm tra response từ API.</p>
           </article>
 
           <article class="feature-card">
-            <span>Working style</span>
-            <h3>Structured analysis</h3>
-            <p>Interested in bug analysis, clear reporting, and careful observation of how small issues affect user experience and system quality.</p>
+            <span>Style</span>
+            <h3>Clear reporting</h3>
+            <p>Ưu tiên mô tả lỗi ngắn gọn, đủ bước tái hiện và dễ trao đổi với team.</p>
           </article>
         </div>
       </div>
@@ -707,16 +714,16 @@ main {
     <div class="reveal">
       <div class="stat-layout">
         <article class="stat-card">
-          <span>Profile summary</span>
-          <p>Software Engineering student with a defined QA direction, combining technical learning with practical interest in testing workflows and software reliability.</p>
+          <span>Summary</span>
+          <p>Sinh viên ngành Software Engineering, định hướng phát triển thành Software Tester / QA Engineer.</p>
         </article>
         <article class="stat-card">
-          <span>Quality interests</span>
-          <p>Manual testing, API verification, defect tracking, and learning how to design meaningful test coverage.</p>
+          <span>Interests</span>
+          <p>Manual testing, API verification, defect tracking và cải thiện trải nghiệm người dùng.</p>
         </article>
         <article class="stat-card">
           <span>Goal</span>
-          <p>Continue growing into a strong Software Tester / QA Engineer through disciplined execution, documentation, and product understanding.</p>
+          <p>Tích lũy kinh nghiệm thực tế, nâng kỹ năng kiểm thử và làm việc tốt trong môi trường sản phẩm.</p>
         </article>
       </div>
     </div>
@@ -726,68 +733,65 @@ main {
     <div class="panel reveal">
       <h2 class="section-heading">Testing and QA skills</h2>
       <p class="section-intro">
-        The current skill set reflects my core QA direction and the areas I am actively building through study and hands-on work.
+        Những kỹ năng mình đang tập trung học và áp dụng.
       </p>
 
       <div class="skill-grid">
         <article class="skill-card">
           <strong>Manual Testing</strong>
-          <p>Validating features through scenario-based checks and expected behavior review.</p>
+          <p>Kiểm thử tính năng theo flow sử dụng và expected result.</p>
         </article>
         <article class="skill-card">
           <strong>Test Case Design</strong>
-          <p>Learning to structure practical test cases that cover important flows and edge situations.</p>
+          <p>Viết test case gọn, rõ và bao phủ các trường hợp quan trọng.</p>
         </article>
         <article class="skill-card">
           <strong>Bug Reporting</strong>
-          <p>Documenting defects clearly so issues can be reproduced, analyzed, and prioritized effectively.</p>
+          <p>Mô tả lỗi có bước tái hiện, kết quả thực tế và mức độ ảnh hưởng.</p>
         </article>
         <article class="skill-card">
           <strong>Functional Testing</strong>
-          <p>Checking whether product functionality behaves correctly against expected requirements.</p>
+          <p>Đối chiếu chức năng với yêu cầu để phát hiện sai khác.</p>
         </article>
         <article class="skill-card">
           <strong>API Testing</strong>
-          <p>Testing backend endpoints and response behavior as part of broader application quality validation.</p>
+          <p>Kiểm tra endpoint, status code, dữ liệu trả về và lỗi thường gặp.</p>
         </article>
         <article class="skill-card">
           <strong>STLC</strong>
-          <p>Understanding the structure of the software testing life cycle and how quality work is organized.</p>
+          <p>Nắm quy trình kiểm thử cơ bản và cách phối hợp các bước trong QA.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section section-grid" id="project">
+  <section class="section section-grid" id="resume">
     <div class="reveal">
       <article class="project-card">
-        <span>Featured project</span>
-        <h3>NearBite - Food Finder Web App</h3>
+        <span>Resume</span>
+        <h3>PDF resume của mình</h3>
         <p>
-          A Progressive Web App designed to help users find nearby food locations. This project reflects experience working around a real web product stack and understanding how application behavior can be validated across frontend and backend flows.
+          Mình đã để sẵn chỗ nhúng resume PDF vào trang. Chỉ cần đặt file vào cùng thư mục với tên <strong>resume.pdf</strong> là khung bên phải sẽ hiển thị ngay.
         </p>
 
         <ul class="project-stack" aria-label="Project technologies">
-          <li>ExpressJS</li>
-          <li>MongoDB</li>
-          <li>PWA</li>
+          <li>File name: resume.pdf</li>
+          <li>Folder: root portfolio</li>
+          <li>View + download</li>
         </ul>
 
-        <a class="project-link" href="https://github.com/TrungViet234" target="_blank" rel="noreferrer">Explore project work on GitHub</a>
+        <a class="project-link" href="resume.pdf" target="_blank" rel="noreferrer">Mở resume PDF ở tab mới</a>
       </article>
     </div>
 
     <div class="reveal">
-      <div class="panel">
-        <h2 class="section-heading">GitHub presence</h2>
+      <div class="panel resume-card">
+        <h2 class="section-heading">Resume preview</h2>
         <p class="section-intro">
-          A quick snapshot of public activity and contribution consistency from GitHub.
+          Nếu PDF chưa hiện, bạn chỉ cần thêm file <strong>resume.pdf</strong> vào thư mục hiện tại.
         </p>
-
-        <div class="stats-preview">
-          <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=TrungViet234&show_icons=true&theme=tokyonight" alt="GitHub stats for TrungViet234">
-          <img src="https://streak-stats.demolab.com/?user=TrungViet234&theme=tokyonight" alt="GitHub streak stats for TrungViet234">
-        </div>
+        <p class="resume-note">Gợi ý: bạn có thể đổi tên file khác, chỉ cần sửa lại mọi chỗ đang dùng <strong>resume.pdf</strong> trong file này.</p>
+        <iframe class="resume-frame" src="resume.pdf" title="Resume PDF preview"></iframe>
       </div>
     </div>
   </section>
@@ -796,7 +800,7 @@ main {
     <div class="panel reveal">
       <h2 class="section-heading">Contact</h2>
       <p class="section-intro">
-        If you want to connect regarding QA, testing practice, or collaboration opportunities, these are the best channels to reach me.
+        Thông tin liên hệ chính của mình.
       </p>
 
       <div class="contact-grid">
@@ -820,7 +824,7 @@ main {
       </div>
 
       <div class="footer">
-        Tran Trung Viet - Software Tester / QA Engineer Portfolio
+        Tran Trung Viet - QA Portfolio
       </div>
     </div>
   </section>
